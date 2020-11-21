@@ -63,7 +63,7 @@ case $yn in
         }
 
         MYOS=$(cat /etc/*release | grep "^ID=" | cut -d = -f 2)
-        versions='fedora"centos"rhel"ol"'
+        versions='fedora"centos"rhel"ol"amzn"'
         if [[ $versions != *"$MYOS"* ]]; then
             echo " "
             echo "Doesn't seem to be running on RedHat, Centos, Fedora, or Oracle Linux, so quitting"
