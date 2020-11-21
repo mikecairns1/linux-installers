@@ -108,7 +108,7 @@ case $yn in
             else
                 if curl -sL https://rpm.nodesource.com/setup_12.x | sudo -E bash - 2>&1 | sudo tee -a /var/log/nodered-install.log >>/dev/null; then CHAR=$TICK; else CHAR=$CROSS; fi
             fi
-            if sudo yum install -y nodejs 2>&1 | sudo tee -a /var/log/nodered-install.log >>/dev/null; then CHAR=$TICK; else CHAR=$CROSS; fi
+            if sudo yum install -y nodejs --skip-broken 2>&1 | sudo tee -a /var/log/nodered-install.log >>/dev/null; then CHAR=$TICK; else CHAR=$CROSS; fi
         fi
         echo -ne "  Install Node.js LTS                 $CHAR"
         # sudo npm i -g npm 2>&1 | sudo tee -a /var/log/nodered-install.log >>/dev/null;
